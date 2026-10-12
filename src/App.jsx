@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Sidebar from './components/Sidebar'
 import Header from './components/Header'
+import AdministrasiPersuratan from './pages/AdministrasiPersuratan'
 import Banner from './components/Banner'
 import KpiGrid from './components/KpiGrid'
 import Demographics from './components/Demographics'
@@ -8,16 +9,36 @@ import FamilyTable from './components/FamilyTable'
 import Drawer from './components/Drawer'
 
 export default function App() {
+  const getRoute = () => {
+    const h = window.location.hash.toLowerCase()
+    if (h.includes('administrasi')) return 'administrasi'
+    return 'dashboard'
+  }
+  const [route, setRoute] = useState(getRoute)
   const [selected, setSelected] = useState(null)
   const [toast, setToast] = useState('')
   const notify = (msg) => { setToast(msg); setTimeout(() => setToast(''), 2600) }
+  useEffect(() => {
+    const onHash = () => setRoute(getRoute())
+    window.addEventListener('hashchange', onHash)
+    return () => window.removeEventListener('hashchange', onHash)
+  }, [])
+  const navigate = (key) => {
+    if (key === 'administrasi') window.location.hash = '#/Administrasi-Persuratan'
+    else if (key === 'dashboard') window.location.hash = '#/'
+    else notify('Halaman tersebut belum tersedia pada tahap ini.')
+    setRoute(key === 'administrasi' ? 'administrasi' : key === 'dashboard' ? 'dashboard' : route)
+  }
   return (
     <div className="bg-surface min-h-screen text-on-surface">
-      <Sidebar />
+      <Sidebar active={route} onNavigate={navigate} />
       <div className="pl-0 lg:pl-72">
         <Header />
         <main className="pt-16">
-          <div className="px-4 lg:px-8 py-6 flex flex-col gap-6">
+          {route === 'administrasi' ? (
+            <AdministrasiPersuratan notify={notify} />
+          ) : (
+            <div className="px-4 lg:px-8 py-6 flex flex-col gap-6">
             <Banner onAdd={() => notify('Form Entri KK Baru siap diisi (integrasi scan OCR KTP).')} />
             <KpiGrid />
             <Demographics />
@@ -30,7 +51,8 @@ export default function App() {
                 </div>
               ))}
             </div>
-          </div>
+            </div>
+          )}
         </main>
       </div>
       <Drawer data={selected} onClose={() => setSelected(null)} />

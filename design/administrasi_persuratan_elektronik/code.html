@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-bright": "#faf8ff", "tertiary-fixed": "#fcdfac", "surface-container-lowest": "#ffffff", "on-primary-fixed": "#002020", "on-background": "#131b2e", "on-error": "#ffffff", "error": "#ba1a1a", "outline": "#6e7979", "inverse-on-surface": "#eef0ff", "primary-container": "#007979", "surface": "#faf8ff", "tertiary-container": "#7f6940", "on-primary-fixed-variant": "#004f4f", "primary-fixed-dim": "#7bd5d5", "background": "#faf8ff", "inverse-surface": "#283044", "surface-variant": "#dae2fd", "on-surface-variant": "#3e4948", "on-secondary-fixed": "#002020", "on-tertiary-container": "#ffeccf", "inverse-primary": "#7bd5d5", "on-secondary-fixed-variant": "#004f50", "surface-container": "#eaedff", "error-container": "#ffdad6", "primary-fixed": "#97f2f1", "surface-dim": "#d2d9f4", "primary": "#005e5e", "on-tertiary": "#ffffff", "tertiary-fixed-dim": "#dec392", "tertiary": "#65512a", "on-tertiary-fixed": "#261900", "surface-container-high": "#e2e7ff", "secondary-container": "#78f2f2", "surface-container-highest": "#dae2fd", "surface-container-low": "#f2f3ff", "on-primary-container": "#a4fefe", "on-error-container": "#93000a", "on-surface": "#131b2e", "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#57441e", "surface-tint": "#006a6a", "outline-variant": "#bdc9c8", "secondary": "#006a6a", "on-primary": "#ffffff", "secondary-fixed-dim": "#5bd9d8", "secondary-fixed": "#7bf5f5", "on-secondary-container": "#006e6e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-lg": "1.5rem", "gutter-sm": "1rem", "margin-mobile": "1rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "1.5rem", "margin": "2rem" }, "fontFamily": { "body-lg": ["Plus Jakarta Sans"], "code-tabular": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "code-tabular": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display-hero": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between py-6 px-4 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-6"><div class="flex items-center gap-3 px-2"><img alt="Logo SIM-RT" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2jq1fs_JFDm6azkdbEPeyxbk2tn46j_eg2vdMvECKw6FLTKFyp7kKJnitjfqeRrz-fbnhv2yzrbPSeuzXl22zaRxeGGrIu9G5guGVUxoqL5lIulzcAjVsvTqDXDDWH1RYIm_JXKshbqRrOKxpOquH9XgASB-jI6RcSfMInC0uzWcojppyGaCYPrhb5ufGLZqBjhHZAo5ctb5a9hUDtIO4OH0SSiU4mQyKAmQUuWlj6kvls9Hc34S_6w"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">SIM-RT</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sistem Kelola Rukun Tetangga</span></div></div><div class="px-3 py-2.5 rounded-lg bg-surface-container flex items-center justify-between"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Wilayah Kerja</span><span class="font-title-sm text-title-sm text-on-surface">RT 04 / RW 08</span></div><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Aktif</span></div><nav class="flex flex-col gap-1.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard-kependudukan" href="#"><span class="material-symbols-outlined text-xl">demography</span><span class="font-title-sm text-title-sm">Dashboard &amp; Kependudukan</span></a><a class="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="administrasi-persuratan" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-xl">assignment</span><span class="font-title-sm text-title-sm">Administrasi &amp; Persuratan</span></div><span class="px-1.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">3 Baru</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="kas-keuangan-warga" href="#"><span class="material-symbols-outlined text-xl">account_balance_wallet</span><span class="font-title-sm text-title-sm">Kas &amp; Keuangan Warga</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="layanan-warga-keamanan" href="#"><span class="material-symbols-outlined text-xl">shield</span><span class="font-title-sm text-title-sm">Layanan Warga &amp; Keamanan</span></a></nav></div><div class="flex flex-col gap-3 px-2"><div class="p-3 rounded-lg bg-surface-container-high flex flex-col gap-2"><div class="flex items-center gap-2 text-error"><span class="material-symbols-outlined text-lg">sos</span><span class="font-title-sm text-title-sm text-error">Saluran Siaga RT</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Hubungi Babinsa, Bhabinkamtibmas, atau Pos Ronda secara instan.</p><a class="inline-flex items-center justify-center gap-1.5 py-1.5 px-3 rounded bg-error text-on-error font-label-md text-label-md hover:bg-on-error-container transition-colors" href="#"><span class="material-symbols-outlined text-base">call</span>Hubungi Pos Ronda</a></div><div class="flex items-center justify-between pt-2"><span class="font-label-sm text-label-sm text-on-surface-variant">© 2025 Kel. Harapan Jaya</span><span class="font-code-tabular text-code-tabular text-on-surface-variant">v2.4.0</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-full px-gutter flex items-center justify-between"><div class="flex items-center gap-3"><div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface"><span class="material-symbols-outlined text-primary text-lg">location_on</span><span class="font-label-md text-label-md">RT 04 / RW 08 • Griya Asri Mandiri</span></div><span class="font-body-sm text-body-sm text-on-surface-variant hidden lg:inline">Kel. Harapan Jaya, Kec. Bekasi Utara</span></div><div class="flex items-center gap-4"><div class="relative flex items-center justify-center p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container cursor-pointer transition-colors"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-surface"></span></div><div class="h-6 w-px bg-outline-variant"></div><div class="flex items-center gap-3"><div class="flex flex-col text-right"><span class="font-title-sm text-title-sm text-on-surface">Bpk. H. Bambang Suryono, S.T.</span><div class="flex items-center justify-end gap-1.5"><span class="px-2 py-0.2 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm">Ketua RT (Super Admin)</span></div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_ys1LM5Mj-EDCyoCaW8xrs4nTVUVhu0Y2yx-gPC6PkdA4xi_xGOZBeBjjnEU14KWxa3HvJIqFQjKX0tbOGJiCoXHQPmdsDYrbKTtZofiesDMZwKmDimcad1oNVV_JDzKqlR1j6ntOx54E1TPHxBZc2YdRd9l7pdOnHTRz4VV4f3o7yZxqID90TQWLvhZE5DNeTpTjZFWM4ENbKhTIpnHnTBbt0JcBzY3i50JjeuXraytnQ8-lQN7VIQ"/></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Banner / Operational Context Bar -->
+<div class="px-margin pt-6 pb-2">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-surface-container-low rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Layanan Administrasi Publik Digital</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-tabular text-code-tabular">SLA Verifikasi ≤ 24 Jam</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Pusat Pelayanan &amp; Persuratan Mandiri RT 04</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Verifikasi pengantar kependudukan, penerbitan tanda tangan elektronik (TTE), dan tata kelola arsip digital warga.</p>
+</div>
+<div class="flex items-center gap-3 flex-wrap">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container text-on-surface font-title-sm text-title-sm hover:bg-surface-container-high transition-colors shadow-sm" id="btn-create-walkin">
+<span class="material-symbols-outlined text-xl text-primary">person_add</span>
+<span>Buat Pengantar Mandiri (Walk-in)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm hover:bg-primary transition-all shadow-md" id="btn-bulk-tte">
+<span class="material-symbols-outlined text-xl text-primary-fixed">draw</span>
+<span>TTE Cepat Terpilih</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Metric KPI Cards -->
+<div class="px-margin py-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Surat Masuk Hari Ini</span>
+<div class="w-9 h-9 rounded-lg bg-secondary-container/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">mark_email_unread</span>
+</div>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-display-hero text-display-hero text-on-surface font-extrabold tracking-tight">03</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">Perlu Respon</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-primary">schedule</span>
+<span>Antrean terlama: 2 jam 15 mnt lalu</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Rata-rata Waktu Verifikasi</span>
+<div class="w-9 h-9 rounded-lg bg-primary-fixed/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">speed</span>
+</div>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-display-hero text-display-hero text-on-surface font-extrabold tracking-tight">4.2</span>
+<span class="font-title-md text-title-md text-on-surface-variant">Jam</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">↓ 35% lebih cepat</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-primary">verified_user</span>
+<span>Target kelurahan: ≤ 12.0 Jam</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Terbit Bulan Ini</span>
+<div class="w-9 h-9 rounded-lg bg-tertiary-fixed/40 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-xl">fact_check</span>
+</div>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-display-hero text-display-hero text-on-surface font-extrabold tracking-tight">28</span>
+<span class="font-title-md text-title-md text-on-surface-variant">Surat</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">+8 dari Jan</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-primary">cloud_done</span>
+<span>100% tersinkronisasi ke RW 08</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Penolakan / Revisi Data</span>
+<div class="w-9 h-9 rounded-lg bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-xl">assignment_late</span>
+</div>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-display-hero text-display-hero text-on-surface font-extrabold tracking-tight">01</span>
+<span class="font-title-md text-title-md text-on-surface-variant">Kasus</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">Lampiran Buram</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">sync_problem</span>
+<span>Blok C2/09 menunggu unggah KK baru</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Workflow Tabs -->
+<div class="px-margin pt-2 pb-4">
+<div class="flex items-center justify-between border-b-0 bg-surface-container-low p-1.5 rounded-xl">
+<div class="flex items-center gap-1 overflow-x-auto w-full lg:w-auto" id="tab-container">
+<button class="tab-btn active inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container-lowest text-primary font-title-sm text-title-sm shadow-sm" data-tab="pending">
+<span class="material-symbols-outlined text-lg">pending_actions</span>
+<span>Pengajuan Masuk (Perlu TTE)</span>
+<span class="px-1.5 py-0.2 rounded-full bg-error text-on-error font-label-sm text-label-sm">3</span>
+</button>
+<button class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-title-sm text-title-sm" data-tab="processing">
+<span class="material-symbols-outlined text-lg">hourglass_top</span>
+<span>Dalam Proses</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">2</span>
+</button>
+<button class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-title-sm text-title-sm" data-tab="completed">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+<span>Selesai &amp; Terbit</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">28</span>
+</button>
+<button class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-title-sm text-title-sm" data-tab="archive">
+<span class="material-symbols-outlined text-lg">archive</span>
+<span>Arsip Riwayat Surat</span>
+</button>
+</div>
+<div class="hidden lg:flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm pr-2">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span>Auto-sync Cloud RT-04 Aktif</span>
+</div>
+</div>
+</div>
+<!-- Main Content Split Layout (65% Table, 35% Live Document Preview) -->
+<div class="px-margin pb-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Side: Table & Search Filters (65% -> 8 cols on desktop) -->
+<section class="lg:col-span-7 xl:col-span-8 flex flex-col gap-4">
+<!-- Filter and Search Header -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-lg">search</span>
+<input class="w-full bg-surface-container-low pl-9 pr-4 py-2 rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest transition-all" id="filter-search" placeholder="Cari nama warga, NIK, nomor surat, atau blok..." type="text"/>
+</div>
+<div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+<select class="bg-surface-container-low text-on-surface font-title-sm text-title-sm px-3 py-2 rounded-lg focus:outline-none" id="filter-category">
+<option value="all">Semua Jenis Surat</option>
+<option selected="" value="SKCK">Surat Pengantar SKCK</option>
+<option value="KTP_KK">Pengantar KTP / KK</option>
+<option value="DOMISILI">Keterangan Domisili</option>
+<option value="NIKAH">Pengantar Nikah (N1-N4)</option>
+<option value="SKU">Keterangan Usaha (SKU)</option>
+<option value="KEMATIAN">Keterangan Kematian</option>
+</select>
+<button class="px-3 py-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1 font-label-md text-label-md">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+<span>Urutan</span>
+</button>
+</div>
+</div>
+<!-- Registry Table Module -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-4">No. Registrasi</th>
+<th class="py-3 px-4">Tgl Masuk</th>
+<th class="py-3 px-4">Pemohon &amp; Alamat</th>
+<th class="py-3 px-4">Jenis &amp; Keperluan</th>
+<th class="py-3 px-4">Status Verifikasi</th>
+<th class="py-3 px-4 text-right">Aksi Tindakan</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-md text-body-md text-on-surface" id="requests-tbody">
+<!-- Row 1 (Active Focused Item) -->
+<tr class="request-row bg-surface-container/60 hover:bg-surface-container transition-colors cursor-pointer" data-block="Blok B3 No. 12" data-date="17 Feb 2025" data-id="RT04-2025-028" data-name="Hendra Gunawan" data-nik="3275031208940003" data-purpose="Permohonan SKCK Melamar Pekerjaan PT Astra" data-status="pending" data-type="SKCK">
+<td class="py-3.5 px-4">
+<span class="font-code-tabular text-code-tabular font-bold text-primary">028/SP-RT04/II/2025</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Reg #1084</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-body-sm text-body-sm font-semibold">Hari ini</span>
+<span class="block font-code-tabular text-code-tabular text-on-surface-variant">08:42 WIB</span>
+</td>
+<td class="py-3.5 px-4 min-w-[180px]">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-on-primary-fixed text-xs">HG</div>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface leading-tight">Hendra Gunawan</div>
+<div class="font-code-tabular text-code-tabular text-on-surface-variant">3275031208940003</div>
+<span class="inline-block mt-0.5 px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Blok B3 / 12</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-[220px]">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-primary font-bold">SKCK</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Persyaratan Berkas Kerja BUMN/Swasta</p>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+                      Menunggu Approval RT
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="btn-inspect-doc p-1.5 rounded-lg text-primary hover:bg-primary-container hover:text-on-primary-container transition-colors" title="Buka Detail">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="btn-direct-tte px-2.5 py-1 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all shadow-sm">
+                        TTE
+                      </button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="request-row hover:bg-surface-container-low transition-colors cursor-pointer" data-block="Blok A1 No. 04" data-date="17 Feb 2025" data-id="RT04-2025-029" data-name="Siti Rahmawati" data-nik="3275034503880001" data-purpose="Pembaruan Kartu Keluarga - Penambahan Anggota Anak ke-2" data-status="approved" data-type="KTP_KK">
+<td class="py-3.5 px-4">
+<span class="font-code-tabular text-code-tabular font-bold text-on-surface">029/SP-RT04/II/2025</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Reg #1085</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-body-sm text-body-sm font-semibold">Hari ini</span>
+<span class="block font-code-tabular text-code-tabular text-on-surface-variant">09:15 WIB</span>
+</td>
+<td class="py-3.5 px-4 min-w-[180px]">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container text-xs">SR</div>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface leading-tight">Siti Rahmawati</div>
+<div class="font-code-tabular text-code-tabular text-on-surface-variant">3275034503880001</div>
+<span class="inline-block mt-0.5 px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Blok A1 / 04</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-[220px]">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface font-bold">KTP &amp; KK</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Penambahan Anggota Keluarga Baru</p>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">done_all</span>
+                      Disetujui Ketua RT
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" title="Lihat">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+                        Kirim WA
+                      </button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="request-row hover:bg-surface-container-low transition-colors cursor-pointer" data-block="Blok D4 No. 19" data-date="16 Feb 2025" data-id="RT04-2025-030" data-name="Budi Santoso" data-nik="3302191506820005" data-purpose="Permohonan Surat Keterangan Domisili Usaha (Laundry Kiloan)" data-status="ready" data-type="SKU">
+<td class="py-3.5 px-4">
+<span class="font-code-tabular text-code-tabular font-bold text-on-surface">026/SP-RT04/II/2025</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Reg #1082</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-body-sm text-body-sm">16 Feb 2025</span>
+<span class="block font-code-tabular text-code-tabular text-on-surface-variant">14:20 WIB</span>
+</td>
+<td class="py-3.5 px-4 min-w-[180px]">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-on-tertiary-fixed text-xs">BS</div>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface leading-tight">Budi Santoso</div>
+<div class="font-code-tabular text-code-tabular text-on-surface-variant">3302191506820005</div>
+<span class="inline-block mt-0.5 px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Blok D4 / 19</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-[220px]">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-tertiary font-bold">SKU Usaha</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Usaha Bersih Fresh Laundry RT 04</p>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">print</span>
+                      Siap Cetak PDF
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 (Revision case) -->
+<tr class="request-row hover:bg-surface-container-low transition-colors cursor-pointer" data-block="Blok C2 No. 09" data-date="16 Feb 2025" data-id="RT04-2025-027" data-name="Aris Munandar" data-nik="3275032911950002" data-purpose="Surat Pengantar Nikah (Model N1-N4 ke KUA Bekasi Utara)" data-status="revision" data-type="NIKAH">
+<td class="py-3.5 px-4">
+<span class="font-code-tabular text-code-tabular font-bold text-on-surface">027/SP-RT04/II/2025</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Reg #1083</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-body-sm text-body-sm">16 Feb 2025</span>
+<span class="block font-code-tabular text-code-tabular text-on-surface-variant">11:05 WIB</span>
+</td>
+<td class="py-3.5 px-4 min-w-[180px]">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-error-container flex items-center justify-center font-bold text-on-error-container text-xs">AM</div>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface leading-tight">Aris Munandar</div>
+<div class="font-code-tabular text-code-tabular text-on-surface-variant">3275032911950002</div>
+<span class="inline-block mt-0.5 px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Blok C2 / 09</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-[220px]">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-error font-bold">Pengantar Nikah</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Pemberkasan Kantor Urusan Agama</p>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">report_problem</span>
+                      Perlu Revisi Dokumen
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container transition-colors" title="Catatan Revisi">
+<span class="material-symbols-outlined text-lg">edit_note</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Pagination and Quick Info -->
+<div class="px-4 py-3 bg-surface-container-low flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Menampilkan <strong>4</strong> dari <strong>31</strong> riwayat berkas aktif</span>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface disabled:opacity-50" disabled="">‹</button>
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary font-bold">1</button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface">2</button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface">3</button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface">›</button>
+</div>
+</div>
+</div>
+<!-- Quick Info Banner for RT Officers -->
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-3">
+<div class="p-2 rounded-lg bg-surface-container-highest text-primary">
+<span class="material-symbols-outlined text-xl">gavel</span>
+</div>
+<div class="flex-1">
+<span class="font-title-sm text-title-sm text-on-surface">Landasan Legalitas Persuratan RT</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tanda Tangan Elektronik (TTE) SIM-RT terenkripsi SHA-256 dan diakui secara administratif oleh Kelurahan Harapan Jaya sesuai Perda Kependudukan No. 04/2021.</p>
+</div>
+</div>
+</section>
+<!-- Right Side: Interactive Panel Preview "Lembar Surat Pengantar Digital" (35% -> 5 cols on desktop) -->
+<section class="lg:col-span-5 xl:col-span-4 sticky top-20">
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col">
+<!-- Sheet Control Header -->
+<div class="px-5 py-3.5 bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">preview</span>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface">Pratinjau Surat Resmi</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant font-code-tabular">Kop Standar Kelurahan v2.1</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-code-tabular text-code-tabular font-bold">LIVE DRAFT</span>
+</div>
+</div>
+<!-- The Physical-like Paper Canvas -->
+<div class="p-6 bg-surface-bright flex flex-col gap-4 text-on-surface font-body-sm text-body-sm" id="document-preview-paper">
+<!-- Official RT / RW Letterhead (KOP SURAT) -->
+<div class="pb-3 border-b-2 border-on-surface flex items-center gap-3">
+<div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-surface-container-low text-primary">
+<!-- RT Emblem / Visual Icon -->
+<svg class="w-10 h-10 fill-none" stroke="currentColor" viewbox="0 0 40 40">
+<path d="M20 4L4 16H9V36H31V16H36L20 4Z" fill="#007979" fill-opacity="0.12" stroke="#007979" stroke-width="2"></path>
+<circle cx="20" cy="24" fill="#24B1B1" fill-opacity="0.3" r="5" stroke="#007979" stroke-width="1.5"></circle>
+<path d="M12 36V22C12 22 17 20 20 20C23 20 28 22 28 22V36" stroke="#007979" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex flex-col text-center flex-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">RUKUN TETANGGA 04 / RUKUN WARGA 08</span>
+<span class="font-title-md text-title-md font-extrabold text-on-surface uppercase leading-tight tracking-tight">KELURAHAN HARAPAN JAYA</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Kecamatan Bekasi Utara • Kota Bekasi • Jawa Barat 17124</span>
+</div>
+</div>
+<!-- Title & Registration Number -->
+<div class="text-center my-1">
+<span class="font-title-md text-title-md font-bold underline uppercase tracking-wide" id="preview-doc-title">SURAT PENGANTAR KETUA RT</span>
+<div class="font-code-tabular text-code-tabular text-on-surface-variant" id="preview-reg-no">
+                Nomor: 028 / SP-RT04 / II / 2025
+              </div>
+</div>
+<!-- Letter Body Context -->
+<p class="text-on-surface-variant leading-relaxed">
+              Yang bertanda tangan di bawah ini Ketua Rukun Tetangga (RT) 04 Rukun Warga (RW) 08 Kelurahan Harapan Jaya, dengan ini menerangkan bahwa:
+            </p>
+<!-- Citizen Detail Sheet Block -->
+<div class="bg-surface-container-low rounded-lg p-3 space-y-2">
+<div class="grid grid-cols-3 gap-1">
+<span class="text-on-surface-variant font-label-md text-label-md">Nama Lengkap</span>
+<span class="col-span-2 font-title-sm text-title-sm text-on-surface" id="preview-name">Hendra Gunawan</span>
+</div>
+<div class="grid grid-cols-3 gap-1">
+<span class="text-on-surface-variant font-label-md text-label-md">NIK</span>
+<span class="col-span-2 font-code-tabular text-code-tabular font-bold text-on-surface" id="preview-nik">3275031208940003</span>
+</div>
+<div class="grid grid-cols-3 gap-1">
+<span class="text-on-surface-variant font-label-md text-label-md">Tempat / Tgl Lahir</span>
+<span class="col-span-2">Bekasi, 12 Agustus 1994</span>
+</div>
+<div class="grid grid-cols-3 gap-1">
+<span class="text-on-surface-variant font-label-md text-label-md">Agama / Pekerjaan</span>
+<span class="col-span-2">Islam / Karyawan Swasta</span>
+</div>
+<div class="grid grid-cols-3 gap-1">
+<span class="text-on-surface-variant font-label-md text-label-md">Alamat Domisili</span>
+<span class="col-span-2" id="preview-address">Jl. Bougenville Raya Blok B3 No. 12, RT 04 / RW 08</span>
+</div>
+<div class="grid grid-cols-3 gap-1">
+<span class="text-on-surface-variant font-label-md text-label-md">Keperluan</span>
+<span class="col-span-2 font-semibold text-primary" id="preview-purpose">Permohonan SKCK Melamar Pekerjaan PT Astra</span>
+</div>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+              Demikian surat pengantar ini dibuat dengan sebenarnya agar dapat dipergunakan sebagaimana mestinya oleh pihak yang berwenang.
+            </p>
+<!-- Signature & Validation Footer Section -->
+<div class="pt-2 flex justify-between items-end">
+<!-- Digital QR Verification Box -->
+<div class="flex flex-col items-start gap-1">
+<div class="p-1.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center gap-2">
+<!-- QR Code Vector Preview -->
+<svg class="w-14 h-14 text-on-surface" fill="currentColor" viewbox="0 0 100 100">
+<rect fill="#FFFFFF" height="100" width="100"></rect>
+<rect fill="#005E5E" height="24" width="24" x="10" y="10"></rect>
+<rect fill="#FFFFFF" height="14" width="14" x="15" y="15"></rect>
+<rect fill="#005E5E" height="6" width="6" x="19" y="19"></rect>
+<rect fill="#005E5E" height="24" width="24" x="66" y="10"></rect>
+<rect fill="#FFFFFF" height="14" width="14" x="71" y="15"></rect>
+<rect fill="#005E5E" height="6" width="6" x="75" y="19"></rect>
+<rect fill="#005E5E" height="24" width="24" x="10" y="66"></rect>
+<rect fill="#FFFFFF" height="14" width="14" x="15" y="71"></rect>
+<rect fill="#005E5E" height="6" width="6" x="19" y="75"></rect>
+<rect fill="#005E5E" height="6" width="6" x="42" y="10"></rect>
+<rect fill="#005E5E" height="6" width="6" x="52" y="18"></rect>
+<rect fill="#005E5E" height="6" width="16" x="42" y="30"></rect>
+<rect fill="#005E5E" height="8" width="8" x="66" y="44"></rect>
+<rect fill="#005E5E" height="14" width="6" x="42" y="52"></rect>
+<rect fill="#005E5E" height="10" width="10" x="52" y="66"></rect>
+<rect fill="#005E5E" height="6" width="16" x="70" y="68"></rect>
+<rect fill="#005E5E" height="12" width="8" x="78" y="78"></rect>
+</svg>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-primary">Validasi Digital</span>
+<span class="font-code-tabular text-code-tabular text-on-surface-variant text-[10px]">SHA256: 8f9b...a17c</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Scan via Ponsel</span>
+</div>
+</div>
+</div>
+<!-- Official Signer Stamp & RT Ketua -->
+<div class="relative flex flex-col items-center min-w-[140px]">
+<span class="font-body-sm text-body-sm">Bekasi, 17 Februari 2025</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Ketua RT 04 / RW 08</span>
+<!-- Rubber Stamp Watermark Effect -->
+<div class="relative w-28 h-16 flex items-center justify-center my-1">
+<!-- Stempel Cap Basah / Digital RT -->
+<div class="absolute inset-0 rounded-full border-2 border-primary/40 flex items-center justify-center rotate-[-12deg] bg-primary-fixed-dim/20 pointer-events-none">
+<div class="text-center font-label-sm text-label-sm font-black text-primary uppercase text-[8px] tracking-tighter leading-none px-1">
+                      PENGURUS RT 04 / RW 08<br/>
+<span class="text-[7px] text-tertiary">★ TERVERIFIKASI ★</span><br/>
+                      KEL. HARAPAN JAYA
+                    </div>
+</div>
+<!-- Digital TTE Vector Badge -->
+<div class="z-10 flex flex-col items-center bg-surface-container-lowest/90 px-2 py-1 rounded shadow-sm" id="tte-badge-display">
+<span class="material-symbols-outlined text-primary text-base">verified</span>
+<span class="font-code-tabular text-code-tabular text-primary font-bold text-[10px]">TTE AKTIF</span>
+</div>
+</div>
+<span class="font-title-sm text-title-sm font-bold text-on-surface mt-1">H. Bambang Suryono, S.T.</span>
+<span class="font-code-tabular text-code-tabular text-on-surface-variant text-[11px]">NIP-RT: 3275.04.08.001</span>
+</div>
+</div>
+</div>
+<!-- Bottom Action Buttons for Chairman -->
+<div class="p-4 bg-surface-container-low flex flex-col gap-2.5">
+<div class="flex items-center gap-2">
+<button class="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm hover:bg-primary transition-all shadow-md" id="btn-sign-tte">
+<span class="material-symbols-outlined text-xl text-primary-fixed">edit_document</span>
+<span>Bubuhi Tanda Tangan Digital (TTE)</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="inline-flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" id="btn-send-wa">
+<span class="material-symbols-outlined text-lg text-primary">send</span>
+<span>Kirim WhatsApp</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" id="btn-print-pdf">
+<span class="material-symbols-outlined text-lg">print</span>
+<span>Cetak PDF Resmi</span>
+</button>
+</div>
+<button class="inline-flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg text-error hover:bg-error-container/40 transition-colors font-label-md text-label-md" id="btn-reject-modal">
+<span class="material-symbols-outlined text-base">cancel</span>
+<span>Tolak / Kembalikan dengan Catatan Koreksi</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Walk-In Modal Creation Trigger (Hidden by Default) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/50 backdrop-blur-sm hidden items-center justify-center p-4" id="modal-walkin">
+<div class="bg-surface-container-lowest max-w-xl w-full rounded-2xl shadow-xl overflow-hidden flex flex-col max-h-[90vh]">
+<!-- Header -->
+<div class="p-5 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">assignment_add</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Buat Surat Pengantar (Walk-in Pos RT)</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Layanan tatap muka warga langsung di kediaman RT</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant" id="btn-close-walkin">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Form Body -->
+<div class="p-6 overflow-y-auto space-y-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Cari Nama Warga / NIK Terdaftar</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant">badge</span>
+<input class="w-full bg-surface-container-low pl-10 pr-4 py-2.5 rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container" placeholder="Ketik NIK 3275... atau nama kepala keluarga..." type="text"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 block">Data tersinkronisasi dengan Master Buku Induk Kependudukan RT 04.</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Jenis Surat Pengantar</label>
+<select class="w-full bg-surface-container-low px-3 py-2.5 rounded-lg font-body-md text-body-md text-on-surface focus:outline-none">
+<option>Surat Pengantar SKCK</option>
+<option>Surat Pengantar KTP / KK</option>
+<option>Surat Keterangan Domisili</option>
+<option>Surat Pengantar Nikah (N1-N4)</option>
+<option>Surat Keterangan Usaha (SKU)</option>
+<option>Surat Keterangan Kematian</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Tanggal Berlaku</label>
+<input class="w-full bg-surface-container-low px-3 py-2.5 rounded-lg font-body-md text-body-md text-on-surface focus:outline-none" type="date" value="2025-02-17"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Rincian Keperluan / Catatan Tambahan</label>
+<textarea class="w-full bg-surface-container-low p-3 rounded-lg font-body-md text-body-md text-on-surface focus:outline-none" placeholder="Contoh: Pengantar pembuatan SKCK untuk syarat rekrutmen pegawai BUMN..." rows="3"></textarea>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">draw</span>
+<span class="font-title-sm text-title-sm text-on-surface">Langsung terbitkan TTE Ketua RT?</span>
+</div>
+<input checked="" class="w-5 h-5 accent-primary rounded" type="checkbox"/>
+</div>
+</div>
+<!-- Footer -->
+<div class="p-4 bg-surface-container-low flex justify-end gap-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface font-title-sm text-title-sm hover:bg-surface-container-high transition-colors" id="btn-cancel-walkin">
+          Batal
+        </button>
+<button class="px-5 py-2 rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm hover:bg-primary transition-colors shadow-sm" id="btn-save-walkin">
+          Simpan &amp; Terbitkan Surat
+        </button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Element -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-xl flex items-center gap-3" id="toast-notification">
+<span class="material-symbols-outlined text-primary-fixed" id="toast-icon">check_circle</span>
+<span class="font-body-md text-body-md" id="toast-message">Surat berhasil ditandatangani secara elektronik (TTE)!</span>
+</div>
+</div>
+<script>
+  // DOM Interactivity for Administration & Digital Letters Module
+  document.addEventListener('DOMContentLoaded', () => {
+    const rows = document.querySelectorAll('.request-row');
+    const previewName = document.getElementById('preview-name');
+    const previewNik = document.getElementById('preview-nik');
+    const previewPurpose = document.getElementById('preview-purpose');
+    const previewRegNo = document.getElementById('preview-reg-no');
+    const previewAddress = document.getElementById('preview-address');
+    const previewDocTitle = document.getElementById('preview-doc-title');
+
+    // Toast Helper
+    const showToast = (message, icon = 'check_circle') => {
+      const toast = document.getElementById('toast-notification');
+      const toastMsg = document.getElementById('toast-message');
+      const toastIcon = document.getElementById('toast-icon');
+      
+      toastMsg.textContent = message;
+      toastIcon.textContent = icon;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3500);
+    };
+
+    // Row selection and sync with preview panel
+    rows.forEach(row => {
+      row.addEventListener('click', () => {
+        rows.forEach(r => r.classList.remove('bg-surface-container/60', 'bg-surface-container'));
+        row.classList.add('bg-surface-container/60');
+
+        const name = row.getAttribute('data-name');
+        const nik = row.getAttribute('data-nik');
+        const block = row.getAttribute('data-block');
+        const purpose = row.getAttribute('data-purpose');
+        const type = row.getAttribute('data-type');
+        const regId = row.querySelector('.text-primary')?.textContent || row.querySelector('td span')?.textContent;
+
+        if (previewName) previewName.textContent = name;
+        if (previewNik) previewNik.textContent = nik;
+        if (previewPurpose) previewPurpose.textContent = purpose;
+        if (previewAddress) previewAddress.textContent = `${block}, RT 04 / RW 08`;
+        if (previewRegNo) previewRegNo.textContent = `Nomor: ${regId}`;
+
+        // Map Title by Type
+        let titleMap = {
+          'SKCK': 'SURAT PENGANTAR KETUA RT (SKCK)',
+          'KTP_KK': 'SURAT PENGANTAR PERMOHONAN KTP / KK',
+          'SKU': 'SURAT KETERANGAN USAHA (SKU)',
+          'NIKAH': 'SURAT PENGANTAR PERNIKAHAN (N1-N4)',
+          'DOMISILI': 'SURAT KETERANGAN DOMISILI WARGA',
+          'KEMATIAN': 'SURAT KETERANGAN KEMATIAN'
+        };
+        if (previewDocTitle && titleMap[type]) {
+          previewDocTitle.textContent = titleMap[type];
+        }
+      });
+    });
+
+    // Digital Signature (TTE) Action
+    const btnSign = document.getElementById('btn-sign-tte');
+    const tteBadge = document.getElementById('tte-badge-display');
+    if (btnSign) {
+      btnSign.addEventListener('click', () => {
+        btnSign.disabled = true;
+        btnSign.innerHTML = `
+          <span class="material-symbols-outlined text-xl animate-spin">refresh</span>
+          <span>Memverifikasi Kunci Kriptografi RT...</span>
+        `;
+        setTimeout(() => {
+          btnSign.disabled = false;
+          btnSign.classList.remove('bg-primary-container');
+          btnSign.classList.add('bg-surface-container', 'text-on-surface');
+          btnSign.innerHTML = `
+            <span class="material-symbols-outlined text-xl text-primary">verified</span>
+            <span>TTE Berhasil Terpasang (Telah Sah)</span>
+          `;
+          if (tteBadge) {
+            tteBadge.classList.add('scale-110');
+            setTimeout(() => tteBadge.classList.remove('scale-110'), 300);
+          }
+          showToast(`Surat atas nama ${previewName ? previewName.textContent : 'warga'} berhasil ditandatangani TTE!`);
+        }, 800);
+      });
+    }
+
+    // Direct TTE Quick Button in Table
+    document.querySelectorAll('.btn-direct-tte').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const row = btn.closest('.request-row');
+        const name = row.getAttribute('data-name');
+        btn.textContent = 'Sah ✓';
+        btn.classList.remove('bg-primary-container');
+        btn.classList.add('bg-secondary-container', 'text-on-secondary-container');
+        showToast(`TTE kilat berhasil dibubuhkan untuk ${name}.`);
+      });
+    });
+
+    // WhatsApp Dispatch Action
+    const btnWa = document.getElementById('btn-send-wa');
+    if (btnWa) {
+      btnWa.addEventListener('click', () => {
+        const name = previewName ? previewName.textContent : 'Warga';
+        showToast(`Tautan PDF Berstempel dikirim ke nomor WhatsApp Bpk/Ibu ${name}`, 'send');
+      });
+    }
+
+    // PDF Print Mock
+    const btnPrint = document.getElementById('btn-print-pdf');
+    if (btnPrint) {
+      btnPrint.addEventListener('click', () => {
+        window.print();
+      });
+    }
+
+    // Tab Navigation Interaction
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => {
+          b.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.remove('text-on-surface-variant');
+        btn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        showToast(`Menampilkan kategori: ${btn.querySelector('span:nth-child(2)').textContent}`, 'filter_alt');
+      });
+    });
+
+    // Walk-in Modal Handlers
+    const modalWalkin = document.getElementById('modal-walkin');
+    const openWalkinBtn = document.getElementById('btn-create-walkin');
+    const closeWalkinBtn = document.getElementById('btn-close-walkin');
+    const cancelWalkinBtn = document.getElementById('btn-cancel-walkin');
+    const saveWalkinBtn = document.getElementById('btn-save-walkin');
+
+    const toggleModal = (show) => {
+      if (modalWalkin) {
+        if (show) {
+          modalWalkin.classList.remove('hidden');
+          modalWalkin.classList.add('flex');
+        } else {
+          modalWalkin.classList.add('hidden');
+          modalWalkin.classList.remove('flex');
+        }
+      }
+    };
+
+    if (openWalkinBtn) openWalkinBtn.addEventListener('click', () => toggleModal(true));
+    if (closeWalkinBtn) closeWalkinBtn.addEventListener('click', () => toggleModal(false));
+    if (cancelWalkinBtn) cancelWalkinBtn.addEventListener('click', () => toggleModal(false));
+    if (saveWalkinBtn) {
+      saveWalkinBtn.addEventListener('click', () => {
+        toggleModal(false);
+        showToast('Surat Walk-in berhasil dibuat & nomor registrasi diterbitkan!');
+      });
+    }
+
+    // Reject Modal Prompt
+    const btnReject = document.getElementById('btn-reject-modal');
+    if (btnReject) {
+      btnReject.addEventListener('click', () => {
+        const reason = prompt("Masukkan alasan pengembalian/koreksi untuk pemohon:", "Foto KTP/KK kurang jelas atau buram, mohon unggah ulang.");
+        if (reason) {
+          showToast(`Catatan revisi dikirim ke pemohon: "${reason}"`, 'report');
+        }
+      });
+    }
+
+    // Filter Search Simulation
+    const filterInput = document.getElementById('filter-search');
+    if (filterInput) {
+      filterInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        rows.forEach(r => {
+          const rowText = r.textContent.toLowerCase();
+          r.style.display = rowText.includes(query) ? '' : 'none';
+        });
+      });
+    }
+  });
+</script></main></div></body></html>
